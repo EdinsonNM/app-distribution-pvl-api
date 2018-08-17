@@ -1,0 +1,62 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "committee": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "partner": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "relationship": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "semester": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "product": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "benefittype": {
+    "dataSource": "mongoDS",
+    "public": true
+  }
+}
