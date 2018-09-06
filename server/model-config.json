@@ -62,5 +62,33 @@
   "ubigeo": {
     "dataSource": "mongoDS",
     "public": true
+  },
+  "urbancore": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "populatedcenter": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "addresstype": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "beneficiary": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "ration": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "period": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "distributionzone": {
+    "dataSource": "mongoDS",
+    "public": true
   }
 }

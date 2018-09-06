@@ -1,6 +1,6 @@
 {
-  "name": "product",
-  "plural": "products",
+  "name": "populatedcenter",
+  "plural": "populatedcenters",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -13,16 +13,7 @@
     }
   },
   "validations": [],
-  "relations": {
-    "rations": {
-      "type": "hasMany",
-      "model": "ration",
-      "foreignKey": "productId",
-      "options": {
-        "nestRemoting": true
-      }
-    }
-  },
+  "relations": {},
   "acls": [],
   "methods": {}
 }

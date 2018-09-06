@@ -1,32 +1,31 @@
 {
-  "name": "partner",
-  "plural": "partners",
+  "name": "ration",
+  "plural": "rations",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "firstName": {
+    "productId": {
       "type": "string",
       "required": true
     },
-    "committeeId": {
+    "periodId": {
+      "type": "string",
+      "required": true
+    },
+    "unity": {
+      "type": "string",
+      "required": true
+    },
+    "quantity": {
       "type": "string",
       "required": true
     }
   },
   "validations": [],
-  "relations": {
-    "committee": {
-      "type": "belongsTo",
-      "model": "committee",
-      "foreignKey": "committeeId",
-      "options": {
-        "nestRemoting": true
-      }
-    }
-  },
+  "relations": {},
   "acls": [],
   "methods": {}
 }

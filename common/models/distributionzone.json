@@ -1,6 +1,6 @@
 {
-  "name": "product",
-  "plural": "products",
+  "name": "distributionzone",
+  "plural": "distributionzones",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -10,19 +10,15 @@
     "name": {
       "type": "string",
       "required": true
+    },
+    "committees": {
+      "type": [
+        "string"
+      ]
     }
   },
   "validations": [],
-  "relations": {
-    "rations": {
-      "type": "hasMany",
-      "model": "ration",
-      "foreignKey": "productId",
-      "options": {
-        "nestRemoting": true
-      }
-    }
-  },
+  "relations": {},
   "acls": [],
   "methods": {}
 }

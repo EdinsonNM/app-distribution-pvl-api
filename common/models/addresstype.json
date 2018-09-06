@@ -1,12 +1,16 @@
 {
-  "name": "product",
-  "plural": "products",
+  "name": "addresstype",
+  "plural": "addresstypes",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
+    "code": {
+      "type": "string",
+      "required": true
+    },
     "name": {
       "type": "string",
       "required": true
@@ -14,10 +18,10 @@
   },
   "validations": [],
   "relations": {
-    "rations": {
+    "committees": {
       "type": "hasMany",
-      "model": "ration",
-      "foreignKey": "productId",
+      "model": "committee",
+      "foreignKey": "addresstypeId",
       "options": {
         "nestRemoting": true
       }

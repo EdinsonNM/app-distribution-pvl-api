@@ -10,10 +10,55 @@
     "name": {
       "type": "string",
       "required": true
+    },
+    "urbancoreName": {
+      "type": "string",
+      "required": true
+    },
+    "populatedCenter": {
+      "type": "number",
+      "required": true
+    },
+    "populatedCenterName": {
+      "type": "string",
+      "required": true
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "partners": {
+      "type": "hasMany",
+      "model": "partner",
+      "foreignKey": "committeeId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "urbancore": {
+      "type": "belongsTo",
+      "model": "urbancore",
+      "foreignKey": "urbancoreId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "addresstype": {
+      "type": "belongsTo",
+      "model": "addresstype",
+      "foreignKey": "addresstypeId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "beneficiaries": {
+      "type": "hasMany",
+      "model": "beneficiary",
+      "foreignKey": "committeeId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
   "acls": [],
   "methods": {}
 }

@@ -1,0 +1,22 @@
+{
+  "name": "beneficiary",
+  "plural": "beneficiaries",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "names": {
+      "type": "string",
+      "required": true
+    },
+    "firstsurname": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
