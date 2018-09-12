@@ -14,25 +14,25 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "mongoDS"
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "mongoDS",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "mongoDS",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "mongoDS",
     "public": false,
     "options": {
       "strictObjectIDCoercion": true
     }
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "mongoDS",
     "public": false
   },
   "committee": {
@@ -88,6 +88,22 @@
     "public": true
   },
   "distributionzone": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "programation": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "income": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "outgoing": {
+    "dataSource": "mongoDS",
+    "public": true
+  },
+  "programationdetail": {
     "dataSource": "mongoDS",
     "public": true
   }

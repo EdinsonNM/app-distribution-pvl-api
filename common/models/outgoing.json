@@ -1,6 +1,6 @@
 {
-  "name": "ration",
-  "plural": "rations",
+  "name": "outgoing",
+  "plural": "outgoings",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -11,12 +11,16 @@
       "type": "string",
       "required": true
     },
-    "periodId": {
+    "unityId": {
       "type": "string",
       "required": true
     },
     "quantity": {
-      "type": "string",
+      "type": "number",
+      "required": true
+    },
+    "departureDate": {
+      "type": "date",
       "required": true
     }
   },

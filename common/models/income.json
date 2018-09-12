@@ -1,6 +1,6 @@
 {
-  "name": "ration",
-  "plural": "rations",
+  "name": "income",
+  "plural": "incomes",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -11,13 +11,21 @@
       "type": "string",
       "required": true
     },
-    "periodId": {
+    "unityId": {
       "type": "string",
       "required": true
     },
-    "quantity": {
-      "type": "string",
+    "entryDate": {
+      "type": "date",
       "required": true
+    },
+    "quantity": {
+      "type": "number",
+      "required": true
+    },
+    "inputCode": {
+      "type": "string",
+      "required": false
     }
   },
   "validations": [],

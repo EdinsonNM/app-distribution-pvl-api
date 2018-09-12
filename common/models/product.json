@@ -10,6 +10,18 @@
     "name": {
       "type": "string",
       "required": true
+    },
+    "unitOfMeasure": {
+      "type": "string",
+      "required": true
+    },
+    "unitOfMeasureConversion": {
+      "type": "string",
+      "required": true
+    },
+    "quantityConversion": {
+      "type": "number",
+      "required": true
     }
   },
   "validations": [],
@@ -23,6 +35,13 @@
       }
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    }
+  ],
   "methods": {}
 }

@@ -4,7 +4,8 @@
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
-    "validateUpsert": true
+    "validateUpsert": true,
+    "strictObjectIDCoercion": true
   },
   "properties": {
     "name": {
@@ -57,8 +58,29 @@
       "options": {
         "nestRemoting": true
       }
+    },
+    "programationdetails": {
+      "type": "hasMany",
+      "model": "programationdetail",
+      "foreignKey": "committeeId",
+      "options": {
+        "nestRemoting": true
+      }
     }
   },
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    }
+  ],
   "methods": {}
 }

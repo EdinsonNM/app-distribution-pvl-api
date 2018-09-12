@@ -1,19 +1,30 @@
 {
-  "name": "partner",
-  "plural": "partners",
+  "name": "programationdetail",
+  "plural": "programationdetails",
   "base": "PersistedModel",
-  "idInjection": true,
+  "idInjection": false,
   "options": {
-    "validateUpsert": true
+    "validateUpsert": true,
+    "strictObjectIDCoercion": true
   },
   "properties": {
-    "firstName": {
+    "programationId": {
       "type": "string",
       "required": true
     },
     "committeeId": {
       "type": "string",
       "required": true
+    },
+    "rations": {
+      "type": [
+        "object"
+      ]
+    },
+    "isDistributed": {
+      "type": "boolean",
+      "required": true,
+      "default": false
     }
   },
   "validations": [],
@@ -27,13 +38,6 @@
       }
     }
   },
-  "acls": [
-    {
-      "accessType": "*",
-      "principalType": "ROLE",
-      "principalId": "$unauthenticated",
-      "permission": "DENY"
-    }
-  ],
+  "acls": [],
   "methods": {}
 }

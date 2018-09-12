@@ -1,27 +1,37 @@
 {
-  "name": "addresstype",
-  "plural": "addresstypes",
+  "name": "programation",
+  "plural": "programations",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
-    "validateUpsert": true
+    "validateUpsert": true,
+    "strictObjectIDCoercion": true
   },
   "properties": {
-    "code": {
+    "periodId": {
       "type": "string",
       "required": true
     },
-    "name": {
-      "type": "string",
+    "month": {
+      "type": "number",
       "required": true
+    },
+    "days": {
+      "type": "number",
+      "required": true
+    },
+    "committees": {
+      "type": [
+        "string"
+      ]
     }
   },
   "validations": [],
   "relations": {
-    "committees": {
+    "programationdetails": {
       "type": "hasMany",
-      "model": "committee",
-      "foreignKey": "addresstypeId",
+      "model": "programationdetail",
+      "foreignKey": "programationId",
       "options": {
         "nestRemoting": true
       }
