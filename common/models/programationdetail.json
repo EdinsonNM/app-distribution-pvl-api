@@ -36,10 +36,16 @@
       "options": {
         "nestRemoting": true
       }
+    },
+    "programation": {
+      "type": "belongsTo",
+      "model": "programation",
+      "foreignKey": "programationId",
+      "options": {
+        "nestRemoting": true
+      }
     }
   },
   "acls": [],
-  "methods": {
-
-  }
+  "methods": {}
 }

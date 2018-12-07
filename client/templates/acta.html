@@ -5,18 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <style>
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    h1, h2, h3, h4, h5,h6{
+      margin: 0;
+    }
+    h1{
+      font-size: 16px;
+    }
+    .center{
+      text-align: center;
+    }
+    .table-header{
+      font-size: 12px;
+      margin-left: 30px;
+      margin-right: 30px;
+      margin-top: 20px;
+      text-align: left;
+    }
+    .table-title{
+      font-weight: bold;
+    }
+    .table-header tr th{
+      text-align: left;
+      width: 120px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body style="font-family: Arial, Helvetica, sans-serif">
-  <h2 style="text-align:center;padding-top:50px;margin: 0">Acta de entrega de productos</h2>
-  <h6 style="text-align:center;color: gray; margin: 10px">Fecha: {actaDate}</h6>
-  <h4 style="text-align:center;margin:0;color:green">{committee}</h4>
-
+  <div>
+    <img src="{{image}}" width="80" style="display: none;"  />
+  </div>
+  <h1 class="center">Acta de entrega -  Recepción de alimentos</h1>
+  <table class="table-header">
+    <tr>
+      <th>Distrito:</th>
+      <td>Tambogrande</td>
+    </tr>
+    <tr>
+        <th>Comite:</th>
+        <td>{committee}</td>
+    </tr>
+    <tr>
+        <th>Centro poblado:</th>
+        <td>{{populatedCenterName}}</td>
+    </tr>
+  </table>
   <table width="100%" style="font-size: 12px;color:#757575; padding: 30px;">
     <thead>
       <tr style="border: 1px solid #757575">
+        <th>Item</th>
         <th>Producto</th>
         <th>Cantidad</th>
         <th>Unidad</th>
+        <th>días</th>
       </tr>
     </thead>
     <tbody>
