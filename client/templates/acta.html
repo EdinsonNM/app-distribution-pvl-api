@@ -33,12 +33,24 @@
       width: 120px;
       font-weight: bold;
     }
+    .copy-container{
+      height: 380px;
+    }
   </style>
 </head>
 <body style="font-family: Arial, Helvetica, sans-serif">
-  <div>
-    <img src="{{image}}" width="80" style="display: none;"  />
-  </div>
+  <div class="copy-container">
+  <table>
+    <tr>
+      <td style="width: 60px;">
+        <img src="{{image}}" width="50"/>
+      </td>
+      <td>
+        <h5>Municipalidad provincial de Tambogrande</h5>
+        <h6>Gerencia de desarrollo social</h6>
+      </td>
+    </tr>
+    </table>
   <h1 class="center">Acta de entrega -  Recepción de alimentos</h1>
   <table class="table-header">
     <tr>
@@ -47,7 +59,11 @@
     </tr>
     <tr>
         <th>Comite:</th>
-        <td>{committee}</td>
+        <td>{{committee}}</td>
+    </tr>
+    <tr>
+      <th>Observación:</th>
+      <td>Los producto se entregan en perfecto estado de calidad y conservación correspondientes al mes  de {{month}}</td>
     </tr>
     <tr>
         <th>Centro poblado:</th>
@@ -65,7 +81,54 @@
       </tr>
     </thead>
     <tbody>
-      {rations}
+      {{rations}}
+    </tbody>
+  </table>
+</div>
+  <hr/>
+  <!--copia documento-->
+  <table>
+    <tr>
+      <td style="width: 60px;">
+        <img src="{{image}}" width="50"/>
+      </td>
+      <td>
+        <h5>Municipalidad provincial de Tambogrande</h5>
+        <h6>Gerencia de desarrollo social</h6>
+      </td>
+    </tr>
+    </table>
+  <h1 class="center">Acta de entrega -  Recepción de alimentos</h1>
+  <table class="table-header">
+    <tr>
+      <th>Distrito:</th>
+      <td>Tambogrande</td>
+    </tr>
+    <tr>
+        <th>Comite:</th>
+        <td>{{committee}}</td>
+    </tr>
+    <tr>
+      <th>Observación:</th>
+      <td>Los producto se entregan en perfecto estado de calidad y conservación correspondientes al mes  de {{month}}</td>
+    </tr>
+    <tr>
+        <th>Centro poblado:</th>
+        <td>{{populatedCenterName}}</td>
+    </tr>
+  </table>
+  <table width="100%" style="font-size: 12px;color:#757575; padding: 30px;">
+    <thead>
+      <tr style="border: 1px solid #757575">
+        <th>Item</th>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Unidad</th>
+        <th>días</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{rations}}
     </tbody>
   </table>
 </body>

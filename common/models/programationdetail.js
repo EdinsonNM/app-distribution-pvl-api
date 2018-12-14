@@ -9,6 +9,9 @@ const UNIT_MEASURENMENT = {
   CM3: 'centímetros cúbicos',
   CAN: 'latas',
 };
+const monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+  'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre',
+];
 module.exports = function(Programationdetail) {
   Programationdetail.download = function(programationId, id, cb) {
     Programationdetail.findOne({where: {id: id}, include: ['programation', 'committee']}, function(err, detail) {
@@ -18,29 +21,15 @@ module.exports = function(Programationdetail) {
       var options = {
         format: 'Letter',
         base: path.join(__dirname, '../../client/templates/'),
-        header: {
-          height: '35mm',
-          contents: `
-          <table>
-          <tr>
-            <td style="width: 60px;">
-              <img src="file://${require.resolve('../../client/templates/logo.png')}" width="50"/>
-            </td>
-            <td>
-              <h5>Municipalidad provincial de Tambogrande</h5>
-              <h6>Gerencia de desarrollo social</h6>
-            </td>
-          </tr>
-          </table>
-          `,
-        },
       };
       console.log(path.join(__dirname, '../../client/templates'));
-      let dateActa = detail.actaDate.toISOString().replace(/T/, ' ').replace(/\..+/, '');
-      html = html.replace('{{image}}',  `file://${require.resolve('../../client/templates/logo.png')}`);
-      html = html.replace('{actaDate}', dateActa);
-      html = html.replace('{committee}', detail.committeeName);
-      html = html.replace('{{populatedCenterName}}', detail.committee().populatedCenterName);
+      // let dateActa = detail.actaDate.toISOString().replace(/T/, ' ').replace(/\..+/, '');
+      // let fecha = detail.programation().month;
+      html = html.replace(/{{image}}/gi,  `file://${require.resolve('../../client/templates/logo.png')}`);
+      //html = html.replace(/{{actaDate}}/gi, monthNames[detail.programation().month]);
+      html = html.replace(/{{month}}/gi, monthNames[detail.programation().month]);
+      html = html.replace(/{{committee}}/gi, detail.committeeName);
+      html = html.replace(/{{populatedCenterName}}/gi, detail.committee().populatedCenterName);
       // console.log("==========", detail.committee());
       let style = 'align="left" bgcolor="#f2f2f2" style="font-family: Verdana, Geneva, Helvetica, Arial, sans-serif; font-size: 12px; color: #000000; padding:10px; padding-right:0;"';
       let rations = detail.rations.map((item, index)=> (
@@ -54,7 +43,7 @@ module.exports = function(Programationdetail) {
       </tr>
       `
       )).join('');
-      html = html.replace('{rations}', rations);
+      html = html.replace(/{{rations}}/gi, rations);
       console.log(detail);
       pdf.create(html, options).toStream(function(err, stream) {
         if (err) return console.log(err);
