@@ -25,6 +25,19 @@
       "type": "boolean",
       "required": true,
       "default": false
+    },
+    "withActa": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "year": {
+      "type": "number",
+      "required": true
+    },
+    "month": {
+      "type": "number",
+      "required": true
     }
   },
   "validations": [],
