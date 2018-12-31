@@ -106,5 +106,9 @@
   "programationdetail": {
     "dataSource": "mongoDS",
     "public": true
+  },
+  "documenttype": {
+    "dataSource": "mongoDS",
+    "public": true
   }
 }
